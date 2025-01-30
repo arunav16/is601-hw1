@@ -1,0 +1,240 @@
+Installing, this may take a few minutes...
+Please create a default UNIX user account. The username does not need to match your Windows username.
+For more information visit: https://aka.ms/wslusers
+Enter new UNIX username: arunav16
+
+New password:
+Retype new password:
+passwd: password updated successfully
+Installation successful!
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+Welcome to Ubuntu 24.04.1 LTS (GNU/Linux 5.15.167.4-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Mon Jan 27 10:34:08 EST 2025
+
+  System load:  0.93                Processes:             32
+  Usage of /:   0.1% of 1006.85GB   Users logged in:       0
+  Memory usage: 7%                  IPv4 address for eth0: 172.28.12.223
+  Swap usage:   0%
+
+
+This message is shown once a day. To disable it please create the
+/home/arunav16/.hushlogin file.
+arunav16@LenovoIP5:~$ git status
+fatal: not a git repository (or any of the parent directories): .git
+arunav16@LenovoIP5:~$ cd wsd/assgn1
+arunav16@LenovoIP5:~/wsd/assgn1$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   readme.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+arunav16@LenovoIP5:~/wsd/assgn1$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   readme.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+arunav16@LenovoIP5:~/wsd/assgn1$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   readme.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .readme.md.swp
+
+no changes added to commit (use "git add" and/or "git commit -a")
+arunav16@LenovoIP5:~/wsd/assgn1$ vi .gitignore
+arunav16@LenovoIP5:~/wsd/assgn1$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+        modified:   readme.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+arunav16@LenovoIP5:~/wsd/assgn1$ git add .gitignore
+arunav16@LenovoIP5:~/wsd/assgn1$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   .gitignore
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   readme.md
+
+arunav16@LenovoIP5:~/wsd/assgn1$ git commit -m "added .swp to gitignore"
+[master 5a4dc5b] added .swp to gitignore
+ 1 file changed, 1 insertion(+)
+arunav16@LenovoIP5:~/wsd/assgn1$ git commit -m "initial readme"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   readme.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+arunav16@LenovoIP5:~/wsd/assgn1$ git add readme.md
+arunav16@LenovoIP5:~/wsd/assgn1$ git commit -m "initial readme"
+[master 1d579a6] initial readme
+ 1 file changed, 9 insertions(+)
+arunav16@LenovoIP5:~/wsd/assgn1$ git checkout -b UpdateReadme
+Switched to a new branch 'UpdateReadme'
+arunav16@LenovoIP5:~/wsd/assgn1$ ls
+readme.md
+arunav16@LenovoIP5:~/wsd/assgn1$ vi readme.md
+arunav16@LenovoIP5:~/wsd/assgn1$ git status
+On branch UpdateReadme
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   readme.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+arunav16@LenovoIP5:~/wsd/assgn1$ git add readme.md
+arunav16@LenovoIP5:~/wsd/assgn1$ git commit -m "updated readme file"
+[UpdateReadme 68582ca] updated readme file
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+arunav16@LenovoIP5:~/wsd/assgn1$ git status
+On branch master
+nothing to commit, working tree clean
+arunav16@LenovoIP5:~/wsd/assgn1$ ls
+readme.md
+arunav16@LenovoIP5:~/wsd/assgn1$ vi readme.md
+arunav16@LenovoIP5:~/wsd/assgn1$ git remote add origin git@github.com:arunav16/is601-hw1.git
+arunav16@LenovoIP5:~/wsd/assgn1$ git show
+commit 1d579a64d8c7592f15a67db4831c36c77f1b3d4b (HEAD -> master)
+Author: arunav16 <am3945@njit.edu>
+Date:   Mon Jan 27 20:46:02 2025 -0500
+
+    initial readme
+
+diff --git a/readme.md b/readme.md
+index e69de29..57fe9bc 100644
+--- a/readme.md
++++ b/readme.md
+@@ -0,0 +1,9 @@
++#Hello professor
++##homework1 content
++Install WSL2 with Ubuntu linux installed
++Create a GitHub Account - Here
++Create a folder for projects in your home directory or where you will remember.
++Create homework 1 folder and go into the folder.
++Create an RSA key "ssh-keygen -t rsa -b 2048" and add the contents of your public id_rsa.pub file to github in settings -> ssh key area.
++Create a branch, and a merge locally as well as on GitHub.
++Submit a link to your repository with at least 4 nicely made commits that include commits for gitignore and contents for your readme.md file.
+arunav16@LenovoIP5:~/wsd/assgn1$ git show origin
+fatal: ambiguous argument 'origin': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+arunav16@LenovoIP5:~/wsd/assgn1$ git remote show
+origin
+arunav16@LenovoIP5:~/wsd/assgn1$ git remote show origin
+The authenticity of host 'github.com (140.82.114.3)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+arunav16@LenovoIP5:~/wsd/assgn1$ ssh-keygen -t rsa -b 2048
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/arunav16/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/arunav16/.ssh/id_rsa
+Your public key has been saved in /home/arunav16/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:u3VRxpQRDG2FBfY7JXxWuZXGeYHpnFKuWAuRhMcmAVo arunav16@LenovoIP5
+The key's randomart image is:
++---[RSA 2048]----+
+|     E..=.. .+XXO|
+|    o  o *   O*B+|
+|   .    + . =.O O|
+|         . o B =o|
+|        S + =  o |
+|         o o .  .|
+|        . . .    |
+|         o .     |
+|        .        |
++----[SHA256]-----+
+arunav16@LenovoIP5:~/wsd/assgn1$ ~/.ssh/id_rsa
+-bash: /home/arunav16/.ssh/id_rsa: Permission denied
+arunav16@LenovoIP5:~/wsd/assgn1$ vi ~/.ssh/id_rsa
+arunav16@LenovoIP5:~/wsd/assgn1$ vi ~/.ssh/id_rsa
+arunav16@LenovoIP5:~/wsd/assgn1$ vi ~/.ssh/id_rsa.pub
+arunav16@LenovoIP5:~/wsd/assgn1$ git status
+On branch master
+nothing to commit, working tree clean
+arunav16@LenovoIP5:~/wsd/assgn1$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+arunav16@LenovoIP5:~/wsd/assgn1$ git push origin master
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (11/11), 1.22 KiB | 416.00 KiB/s, done.
+Total 11 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:arunav16/is601-hw1.git
+ * [new branch]      master -> master
+arunav16@LenovoIP5:~/wsd/assgn1$ git merge UpdateReadme
+Updating 1d579a6..68582ca
+Fast-forward
+ readme.md | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+arunav16@LenovoIP5:~/wsd/assgn1$ ls
+readme.md
+arunav16@LenovoIP5:~/wsd/assgn1$ vi readme.md
+arunav16@LenovoIP5:~/wsd/assgn1$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   readme.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+arunav16@LenovoIP5:~/wsd/assgn1$ git add readme.md
+arunav16@LenovoIP5:~/wsd/assgn1$ git commit -m "final changes to readme"
+[master d6f1062] final changes to readme
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+arunav16@LenovoIP5:~/wsd/assgn1$ git status
+On branch master
+nothing to commit, working tree clean
+arunav16@LenovoIP5:~/wsd/assgn1$ git push origin master
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 692 bytes | 346.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To github.com:arunav16/is601-hw1.git
+   1d579a6..d6f1062  master -> master
+arunav16@LenovoIP5:~/wsd/assgn1$ git config --global init.defaultBranch main
+arunav16@LenovoIP5:~/wsd/assgn1$
